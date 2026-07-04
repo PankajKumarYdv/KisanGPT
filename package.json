@@ -1,0 +1,21 @@
+{
+  "name": "kisan-gpt",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev:client": "npm run dev -w client",
+    "dev:server": "npm run dev -w server",
+    "build:client": "npm run build -w client",
+    "build:server": "npm run build -w server",
+    "build": "npm run build -w server && npm run build -w client",
+    "lint:client": "npm run lint -w client",
+    "format:client": "npm run format -w client"
+  },
+  "dependencies": {
+    "mongodb": "^7.4.0"
+  }
+}

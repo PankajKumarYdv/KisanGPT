@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 120 15% 97%;      /* Off-white, soft green undertone */
+    --foreground: 120 20% 10%;      /* Dark forest green-black */
+    --card: 0 0% 100%;
+    --card-foreground: 120 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 20% 10%;
+    --primary: 142 76% 28%;         /* Primary Earthy Green */
+    --primary-foreground: 355 0% 100%;
+    --secondary: 217 91% 60%;       /* Sky Blue */
+    --secondary-foreground: 222 47% 11%;
+    --accent: 24 100% 50%;          /* Accent Orange */
+    --accent-foreground: 0 0% 100%;
+    --muted: 120 10% 90%;
+    --muted-foreground: 120 10% 40%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 120 10% 88%;
+    --input: 120 10% 88%;
+    --ring: 142 76% 28%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 120 20% 8%;       /* Very dark green-black */
+    --foreground: 120 10% 95%;      /* Soft white */
+    --card: 120 20% 10%;            /* Slightly lighter dark green-black */
+    --card-foreground: 120 10% 95%;
+    --popover: 120 20% 10%;
+    --popover-foreground: 120 10% 95%;
+    --primary: 142 72% 38%;         /* Bright Earth Green */
+    --primary-foreground: 355 0% 100%;
+    --secondary: 217 91% 60%;       /* Sky Blue */
+    --secondary-foreground: 210 40% 98%;
+    --accent: 24 100% 50%;          /* Accent Orange */
+    --accent-foreground: 0 0% 100%;
+    --muted: 120 10% 18%;
+    --muted-foreground: 120 5% 65%;
+    --destructive: 0 62% 38%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 120 10% 18%;
+    --input: 120 10% 18%;
+    --ring: 142 72% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-200;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  /* Hide navigation, sidebars, buttons, and other interactive elements */
+  nav, aside, button, .no-print, header {
+    display: none !important;
+  }
+  main, .max-w-5xl {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .bg-card, .bg-muted\/30, .bg-muted\/20 {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+  }
+  .text-muted-foreground {
+    color: #475569 !important;
+  }
+}
+

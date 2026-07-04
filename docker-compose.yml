@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: kisangpt-db
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: kisangpt-server
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    environment:
+      - PORT=5000
+      - MONGODB_URI=mongodb://mongodb:27017/kisangpt
+      - JWT_ACCESS_SECRET=supersecretjwtaccesskeychangeinproduction
+      - JWT_REFRESH_SECRET=supersecretjwtrefreshkeychangeinproduction
+      - JWT_SECRET=supersecretjwtkeychangeinproduction
+      - NODE_ENV=production
+      - GEMINI_API_KEY=AQ.Ab8RN6IZsxme9jC1HZOOX2TNJS62ibKa3x6t-4Kt_sshkeQaQQ
+      - OPENWEATHERMAP_API_KEY=dummy_openweathermap_api_key_placeholder
+      - openweathermap_API=e442a5dc27d0ed0728dda6be896041af
+      - DATAGOV_API_KEY=dummy_datagov_api_key_placeholder
+    volumes:
+      - ./server/logs:/app/logs
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: kisangpt-client
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+
+volumes:
+  mongo-data:
