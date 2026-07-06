@@ -4,7 +4,6 @@
 [![Vite](https://img.shields.io/badge/Frontend-Vite%20%2B%20React%2019-6257E6?style=flat-shaping)](https://vitejs.dev/)
 [![Express](https://img.shields.io/badge/Backend-Express%20%2B%20Node.js-339933?style=flat-shaping)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB%206.0-47A248?style=flat-shaping)](https://www.mongodb.com/)
-[![Docker](https://img.shields.io/badge/Container-Docker%20Compose-2496ED?style=flat-shaping)](https://www.docker.com/)
 
 ---
 
@@ -38,23 +37,20 @@ Download PDF diagnostic reports directly using custom print stylesheets, or expo
 KisanGPT/
 ├── client/                     # React 19 Frontend Application (Vite)
 │   ├── src/
-│   │   ├── components/         # Reusable layouts, Navbar, Notification Drawer
-│   │   ├── hooks/              # API and global useDemoMode hooks
-│   │   ├── mock/               # 5 Preseeded agricultural cohort scenarios
-│   │   ├── pages/              # Dashboard, WorkflowVisualizer, Assessment Details
-│   │   └── index.css           # Custom CSS styling & @media print overrides
-│   └── Dockerfile              # Frontend image compile step
+│      ├── components/         # Reusable layouts, Navbar, Notification Drawer
+│      ├── hooks/              # API and global useDemoMode hooks
+│      ├── mock/               # 5 Preseeded agricultural cohort scenarios
+│      ├── pages/              # Dashboard, WorkflowVisualizer, Assessment Details
+│      └── index.css           # Custom CSS styling & @media print overrides
+│   
 │
 ├── server/                     # Express Backend API Server (Node.js)
 │   ├── src/
 │   │   ├── agents/             # AI Multi-agent framework controllers
 │   │   ├── routes/             # Express API blueprints
 │   │   └── server.js           # Server application entry point
-│   ├── tests/                  # Integration testing scripts
-│   └── Dockerfile              # Backend image compilation
-│
+│   └── tests/                  # Integration testing scripts
 ├── docs/                       # Systems architecture developer guides
-└── docker-compose.yml          # Container configuration orchestrator
 ```
 
 ---
@@ -96,11 +92,4 @@ npm run test:weather -w server
 npm run test:market -w server
 ```
 
----
-
-## 🐳 Docker Deployment
-Run the entire platform inside isolated container groups with one command:
-```bash
-docker compose up --build
-```
-Access the dashboard portal at `http://localhost`.
+Access the dashboard portal at `[kishangptai](https://kishangptai.vercel.app/)`.
