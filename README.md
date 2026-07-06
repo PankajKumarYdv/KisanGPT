@@ -96,5 +96,6 @@ npm run test:market -w server
 * **Golu Choudhary** - [Github link](https://github.com/GoluChoudhary001)
 
 
-
+---
+## 🚀 Deploy
 Access the dashboard portal at [kishangptai](https://kishangptai.vercel.app/).
