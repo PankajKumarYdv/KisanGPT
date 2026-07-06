@@ -91,5 +91,10 @@ npm run test:weather -w server
 # Mandi prices Agmarknet API validation
 npm run test:market -w server
 ```
+## 👥 Authors & Contributors
+* **Pankaj Kumar** - [Github link](https://github.com/PankajKumarYdv)
+* **Golu Choudhary** - [Github link](https://github.com/GoluChoudhary001)
+
+
 
 Access the dashboard portal at [kishangptai](https://kishangptai.vercel.app/).
