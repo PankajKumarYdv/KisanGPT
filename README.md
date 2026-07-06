@@ -92,4 +92,4 @@ npm run test:weather -w server
 npm run test:market -w server
 ```
 
-Access the dashboard portal at `[kishangptai](https://kishangptai.vercel.app/)`.
+Access the dashboard portal at [kishangptai](https://kishangptai.vercel.app/).
