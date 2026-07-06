@@ -43,7 +43,7 @@ export default function Login() {
       addToast('Welcome back to KisanGPT!', 'success');
       navigate('/dashboard');
     } catch (err) {
-      addToast(err.message || 'Invalid credentials. Try rajesh@example.com', 'error');
+      addToast(err.message || 'Invalid credentials. Try newfarmer@example.com', 'error');
     } finally {
       setLoading(false);
     }
@@ -75,17 +75,17 @@ export default function Login() {
             <p className="text-xs font-semibold text-white/70 uppercase tracking-widest mb-3">Quick Demo Access</p>
             <div className="space-y-2.5">
               <button
-                onClick={() => handleFillDemo('rajesh@example.com')}
+                onClick={() => handleFillDemo('newfarmer@example.com')}
                 className="w-full text-xs font-bold bg-white text-primary px-4 py-2.5 rounded-xl hover:bg-neutral-50 transition-all flex justify-between items-center"
               >
-                <span>Login as Rajesh (Wheat Farmer)</span>
+                <span>Login as newfarmer (Wheat Farmer)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
               <button
-                onClick={() => handleFillDemo('anil@example.com')}
+                onClick={() => handleFillDemo('demo@kisangpt.ai')}
                 className="w-full text-xs font-bold bg-white/10 text-white border border-white/10 px-4 py-2.5 rounded-xl hover:bg-white/20 transition-all flex justify-between items-center"
               >
-                <span>Login as Anil (Grape Farmer)</span>
+                <span>Login as demo (Grape Farmer)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
