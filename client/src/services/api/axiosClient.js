@@ -36,7 +36,7 @@ axiosClient.interceptors.response.use(
         // Clear auth data and force page reload/redirect
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        
+
         // Only redirect if we are not on public auth pages
         const publicPages = ['/login', '/signup', '/forgot-password', '/reset-password', '/'];
         const currentPath = window.location.pathname;

@@ -57,7 +57,7 @@ export default function FarmerProfile() {
   useEffect(() => {
     if (user && user.role !== 'admin' && farmers.length > 0) {
       // Find matching profile owned by current user
-      const owned = farmers.find(f => f.userId?._id === user.id || f.userId === user.id);
+      const owned = farmers.find(f => f.userId?._id === (user._id || user.id) || f.userId === (user._id || user.id));
       if (owned) {
         navigate(`/profile/${owned._id}`, { replace: true });
       }
