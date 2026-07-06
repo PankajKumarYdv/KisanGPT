@@ -32,7 +32,7 @@ export default function Sidebar({ isOpen, onClose }) {
 
   const handleLogout = () => {
     logout();
-    navigate('/');
+    navigate('/login');
   };
 
   const navContent = (

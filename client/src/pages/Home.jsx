@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAuth } from '../context/AuthContext.jsx';
 import {
   Sprout,
   ShieldCheck,
@@ -16,6 +17,7 @@ import {
 } from 'lucide-react';
 
 export default function Home() {
+  const { isAuthenticated } = useAuth();
   const [activeFaq, setActiveFaq] = useState(null);
 
   const features = [
@@ -99,10 +101,10 @@ export default function Home() {
             className="flex flex-wrap gap-4"
           >
             <Link
-              to="/signup"
+              to={isAuthenticated ? "/dashboard" : "/signup"}
               className="px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:bg-opacity-95 flex items-center gap-2 transition-all group"
             >
-              Get Started Free
+              {isAuthenticated ? "Go to Dashboard" : "Get Started Free"}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
@@ -280,10 +282,10 @@ export default function Home() {
           </p>
           <div className="pt-2">
             <Link
-              to="/signup"
+              to={isAuthenticated ? "/dashboard" : "/signup"}
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-primary font-bold rounded-xl shadow-lg hover:bg-neutral-50 transition-all group"
             >
-              Register Your Farm Profile
+              {isAuthenticated ? "Go to Dashboard" : "Register Your Farm Profile"}
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
