@@ -79,7 +79,7 @@ export default function Login() {
             <div className="space-y-2.5">
               <button
                 type="button"
-                onClick={() => handleFillDemo('demo@kisangpt.ai', 'Demo@123', 'demo')}
+                onClick={() => handleFillDemo('demo@kisangpt.ai', 'password123', 'demo')}
                 className={`w-full text-xs font-bold px-4 py-2.5 rounded-xl transition-all flex justify-between items-center ${
                   selectedDemo === 'demo'
                     ? 'bg-white text-primary shadow-lg font-black scale-102'
@@ -91,7 +91,7 @@ export default function Login() {
               </button>
               <button
                 type="button"
-                onClick={() => handleFillDemo('newfarmer@example.com', 'SecurePass123!', 'newfarmer')}
+                onClick={() => handleFillDemo('newfarmer@example.com', 'password123', 'newfarmer')}
                 className={`w-full text-xs font-bold px-4 py-2.5 rounded-xl transition-all flex justify-between items-center ${
                   selectedDemo === 'newfarmer'
                     ? 'bg-white text-primary shadow-lg font-black scale-102'
